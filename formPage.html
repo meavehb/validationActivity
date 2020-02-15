@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script src="formValidating.js"></script>
+</head>
+<body>
+    <h1>User Sign-up</h1>
+    <h3>Fill-in the details needed below to become a member now!</h3>
+    <form>
+        <fieldset>
+            <legend>Account Set-Up</legend>
+                <label>First Name: <input type="text" id="fname" required></label>
+                <label>Last Name: <input type="text" id="lname" required></label><br><br>
+                <label>Address: <textarea id="address" cols="30" rows="3" required></textarea></label><br><br>
+                <label>Country: <input type="text" id="country"></label><br><br>
+                <label>E-mail: <input type="email" id="email" required></label><br><br>
+                <label>Username: <input type="text" id="username" required></label><br><br>
+                <label>Password: <input type="password" id="primepw" required></label>
+                <label>Confirm Password: <input type="password" id="confirmpw" required></label><br><br>
+        </fieldset><br><br>
+        <fieldset>
+            <legend>Linking your credit/debit</legend>
+            <input type="checkbox" id="sameFullname" value="yes" onchange="sameName()">
+            <label>Is the name above the same on your card?</label><br><br>
+                <label>First Name: <input type="text" id="cfname"></label>
+                <label>Last Name: <input type="text" id="clname"></label><br><br>
+            <input type="checkbox" id="sameAddress" value="yes" onchange="sameAdd()">
+            <label>Is the address above the same on your card?</label><br><br>
+                <label>Address: <textarea id="caddress" cols="30" rows="3"></textarea></label><br><br>
+                <label>Card Number: <input type="text" id="cardno" pattern="[0-9]{13,19}" required></label> (Example: 1234xxxxxxxxx)<br><br>
+                <label>Expiration Date:
+                    <select name="expmon" required>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                    </select> /
+                    <select name="expyear" required>
+                        <option>2018</option>
+                        <option>2019</option>
+                        <option>2020</option>
+                        <option>2021</option>
+                        <option>2022</option>
+                        <option>2023</option>
+                    </select>
+                </label><br><br>
+                <label>Security Code: <input type="text" id="seccode" pattern="[0-9]{3,}"></label><br><br>
+        </fieldset><br><br>
+        <button onclick="samePW()">Submit</button>
+        <button type="reset">Clear Fields</button>
+    </form>
+</body>
+</html>
